@@ -58,8 +58,7 @@ String dataPoints = gsonObj.toJson(list);
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <IMG SRC="piechart.png" WIDTH="600" HEIGHT="400" 
-           BORDER="0" USEMAP="#chart">
+ 
 <script type="text/javascript">
 window.onload = function() { 
  

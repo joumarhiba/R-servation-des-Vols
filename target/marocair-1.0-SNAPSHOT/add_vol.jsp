@@ -21,7 +21,7 @@
          <div class="d-flex justify-content-center m-8">
              <div class="row-3">
                  <div class="col-12">
-                     <h1>Modifier un vol</h1>
+                     <h1>Ajouter un vol</h1>
                      
                  </div>
              </div><br>

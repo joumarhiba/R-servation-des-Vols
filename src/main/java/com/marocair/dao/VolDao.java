@@ -148,10 +148,34 @@ public class VolDao extends DbConnection {
              }
             
         }catch(Exception ex){
-            
+            ex.printStackTrace();
         }
         
         return d;
     }
     
+    
+    public String nb_bookings() {
+        
+        Vol  v= null;
+        int nb = 0;
+        String s ="nothing";
+        
+        try{
+            Connection connection = getConnection();
+            String query = "SELECT count(idbooking) AS nb_booking FROM bookings";
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();    
+            if(rs.next()){
+                 v = new Vol();
+                v.setIdVol(rs.getInt(1));
+            }
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+            s= ex.getMessage();
+        }
+        
+        return s;
+    }
 }

@@ -89,7 +89,7 @@
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   <a href="edit_vol.jsp?idVol=<%=v.getIdVol() %>" class="text-gray-900 hover:text-gray-600"><i class="fas fa-edit"></i></a>
-                  <a href="delete?idVol=<%=v.getIdVol() %>" class="text-gray-900 hover:text-gray-600"><i class="fa fa-trash"></i></a>
+                  <a href="delete?idVol=<%=v.getIdVol() %>" onclick="sample()" class="text-gray-900 hover:text-gray-600"><i class="fa fa-trash"></i></a>
               </td>
               
             </tr>
@@ -103,5 +103,6 @@
   </div>
 </div>
           </div>
+          
     </body>
 </html>

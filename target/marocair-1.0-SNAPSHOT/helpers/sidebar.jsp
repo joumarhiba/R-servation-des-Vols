@@ -15,73 +15,41 @@
         <!--sidebar-->
         
     <div
-      class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-800 grid-cols-9"
+      class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-800 grid-cols-9 md:w-1/6 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]"
     >
       <div class="text-gray-100 text-xl">
         <div class="p-2.5 mt-1 flex items-center">
-                    <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
- 
+            <p  class="font-bold text-white-100 text-md text-center">MarocAir</p> 
           <i
-            class="bi bi-x cursor-pointer ml-28 lg:hidden"
+            class="bi bi-x cursor-pointer ml-28"
             onclick="openSidebar()"
           ></i>
         </div>
         <div class="my-2 bg-gray-600 h-[1px]"></div>
       </div>
+     <div class="mt-8 text-center">
+            <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28">
+            <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Responsable des vols</h5>
+            <span class="hidden text-gray-400 lg:block">Admin</span>
+        </div>
       <div
-        class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white"
-      >
-        <i class="bi bi-search text-sm"></i>
-        <input
-          type="text"
-          placeholder="Search"
-          class="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
-        />
-      </div>
-      <div
-        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:text-gray-500 text-white"
       >
         <i class="bi bi-house-door-fill"></i>
-        <span ><a class="text-[15px] ml-4 text-gray-200 font-bold no-underline" href="dashboardAdmin.jsp">Dashboard</a></span>
+        <span><a class="text-[15px] ml-4 text-gray-200 font-bold no-underline hover:bg-gray-500" href="dashboardAdmin.jsp">Dashboard</a></span>
       </div>
       <div
-        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:text-gray-500 text-white"
       >
         <i class="bi bi-bookmark-fill"></i>
-        <span ><a class="text-[15px] ml-4 text-gray-200 font-bold no-underline" href="add_vol.jsp">Add flight</a></span>
+        <span ><a class="text-[15px] ml-4 text-gray-200 font-bold no-underline hover:bg-gray-500" href="add_vol.jsp">Add flight</a></span>
       </div>
       <div class="my-4 bg-gray-600 h-[1px]"></div>
+     
       <div
-        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-        onclick="dropdown()"
-      >
-        <i class="bi bi-chat-left-text-fill"></i>
-        <div class="flex justify-between w-full items-center">
-          <span class="text-[15px] ml-4 text-gray-200 font-bold">Chatbox</span>
-          <span class="text-sm rotate-180" id="arrow">
-            <i class="bi bi-chevron-down"></i>
-          </span>
-        </div>
-      </div>
-      <div
-        class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold"
-        id="submenu"
-      >
-        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-          Social
-        </h1>
-        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-          Personal
-        </h1>
-        <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-          Friends
-        </h1>
-      </div>
-      <div
-        class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-      >
+        class="p-2.5 mt-3 flex items-center  rounded-md px-4 duration-300 cursor-pointer hover:text-gray-500 text-white">
         <i class="bi bi-box-arrow-in-right"></i>
-        <span class="text-[15px] ml-4 text-gray-200 font-bold">Logout</span>
+        <a class="text-[15px] ml-4 text-gray-200 no-underline font-bold hover:bg-gray-500" href="LogoutServle" >Logout</a>
       </div>
     </div>
         </div>

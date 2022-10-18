@@ -18,17 +18,18 @@ import java.util.List;
  */
 public class BookingDao extends DbConnection {
     
-     public  List<Booking> getBookings() {
+     public  int getBookings() {
         List<Booking> list = new ArrayList<>();
         Booking b= null;
+        int c = 0;
         
         try{
             
             Connection connection = getConnection();
-            String sql = "SELECT * FROM vols";
+            String sql = "SELECT * FROM bookings";
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            
+            c=0;
             while(rs.next()){
                 b = new Booking();
                 b.setIdBooking(rs.getInt(1));
@@ -39,18 +40,19 @@ public class BookingDao extends DbConnection {
                 b.setStatus(rs.getString(6));
                 b.setClasse(rs.getString(7));
                 list.add(b);
+                c++;
             }
             
         }catch(Exception e){
             e.getMessage();
         }
         
-        return list;
+        return c;
     }
 
    
     
-    public List<Booking> confirmedBooking(String query){
+    public List<Booking> getBookingByDate(String query){
         
         String cb = null;
          List<Booking> l = new ArrayList<>();
@@ -61,7 +63,7 @@ public class BookingDao extends DbConnection {
         try{
             
             Connection connection = getConnection();
-            String sql = "SELECT bookings.*, vols.end_city, vols.start_date_time FROM vols INNER JOIN bookings ON vols.idVol = bookings.idvol where vols.start_date_time like '"+query+"%' order by bookings.status";
+            String sql = "SELECT bookings.*, vols.end_city, vols.start_date_time, vols.prix FROM vols INNER JOIN bookings ON vols.idVol = bookings.idvol where vols.start_date_time like '"+query+"%' order by bookings.status";
             PreparedStatement ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             
@@ -78,6 +80,7 @@ public class BookingDao extends DbConnection {
                 b.setClasse(rs.getString(7));
                 b.setEnd_city(rs.getString(8));
                 b.setStart_date_time(rs.getString(9));
+                b.setPrix(rs.getInt(10));
                 l.add(b);
                  cb = "the query is correct in try";
             }

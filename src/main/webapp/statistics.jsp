@@ -63,7 +63,7 @@
             <%
                         String query = request.getParameter("q");
                          BookingDao db = new BookingDao();   
-                         List<Booking> l = db.confirmedBooking(query);
+                         List<Booking> l = db.getBookingByDate(query);
                          for(Booking b : l) {
             %>
             
@@ -99,5 +99,7 @@
   </div>
 </div>
           </div>
+          
+            <%@include file="infosAdmin.jsp" %>
     </body>
 </html>

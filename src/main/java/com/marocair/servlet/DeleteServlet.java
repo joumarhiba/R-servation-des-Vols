@@ -29,6 +29,7 @@ public class DeleteServlet extends HttpServlet {
        
         int idVol = Integer.parseInt(request.getParameter("idVol"));
         VolDao dao = new VolDao();
+        //alert("Are you suuuuuuuuuuuure");
         boolean result = dao.deleteVol(idVol);
         HttpSession session = request.getSession();
         

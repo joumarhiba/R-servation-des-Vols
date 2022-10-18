@@ -11,6 +11,15 @@ public class Booking {
     private String classe;
     private String end_city;
     private String start_date_time;
+    private int prix;
+
+    public int getPrix() {
+        return prix;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
 
     public String getStart_date_time() {
         return start_date_time;
