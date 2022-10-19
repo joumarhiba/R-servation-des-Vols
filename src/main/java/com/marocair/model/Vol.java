@@ -11,6 +11,15 @@ public class Vol {
     private String end_city;
     private String escale;
     private int prix;
+    private int iduser;
+
+    public int getIduser() {
+        return iduser;
+    }
+
+    public void setIduser(int iduser) {
+        this.iduser = iduser;
+    }
 
     
     public Vol() {

@@ -1,3 +1,4 @@
+C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\ResServlet.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\dao\LoginDao.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\dao\RegisterDao.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\dao\BookingDao.java
@@ -5,10 +6,12 @@ C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\DeleteServlet.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\LoginServlet.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\UpdateVolServlet.java
+C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model\SendMail.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model\Booking.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\VolServlet.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model\Vol.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\dao\VolDao.java
+C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model\ReservationBean.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\model\LoginBean.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\servlet\RegisterServlet.java
 C:\Users\YC\Documents\NetBeansProjects\marocair\src\main\java\com\marocair\dao\DbConnection.java

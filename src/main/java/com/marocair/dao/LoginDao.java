@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LoginDao  extends DbConnection {
+    
+    public static int id_user;
+     public  static  String email;
 
     public String authenticateUser(LoginBean loginBean) {
         String userName = loginBean.getUserName();
@@ -23,9 +26,11 @@ public class LoginDao  extends DbConnection {
         try {
              Connection connection = getConnection();
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("select fullname,password,role from users");
+            resultSet = statement.executeQuery("select * from users");
 
             while (resultSet.next()) {
+                id_user=resultSet.getInt("iduser");
+                email=resultSet.getString("email");
                 userNameDB = resultSet.getString("fullname");
                 passwordDB = resultSet.getString("password");
                 roleDB = resultSet.getInt("role");
@@ -37,7 +42,8 @@ public class LoginDao  extends DbConnection {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return e.getMessage();
         }
-        return "Invalid user credentials "+userNameDB +" "+passwordDB;
+        return "Invalid user credentialssssssssss "+userNameDB +" "+passwordDB;
     }
 }

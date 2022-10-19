@@ -49,10 +49,40 @@ public class BookingDao extends DbConnection {
         
         return c;
     }
-
-   
+     
+     
+public List<Booking> getPrice(){
     
-    public List<Booking> getBookingByDate(String query){
+     List<Booking> listPrices = new ArrayList<>();
+        Booking b= null;
+         ResultSet rs = null;
+        
+        
+        try{
+            
+            Connection connection = getConnection();
+            String sql = "SELECT bookings.status, vols.prix FROM vols INNER JOIN bookings ON vols.idVol = bookings.idvol where status = 'confirm'";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               
+                b = new Booking();
+                
+                b.setStatus(rs.getString(1));
+                b.setPrix(rs.getInt(2));
+               
+                listPrices.add(b);
+            }
+            
+        }catch(Exception e){
+            e.getMessage();
+           
+        }
+        return listPrices;
+    
+}
+public List<Booking> getBookingByDate(String query){
         
         String cb = null;
          List<Booking> l = new ArrayList<>();
@@ -91,6 +121,70 @@ public class BookingDao extends DbConnection {
         }
         
        return l;
+    }
+
+   
+    
+    public List<Booking> confirmedBooking(){
+        
+        String cb = null;
+         List<Booking> lConfirm = new ArrayList<>();
+        Booking b= null;
+         ResultSet rs = null;
+        
+        
+        try{
+            
+            Connection connection = getConnection();
+            String sql = "SELECT bookings.status FROM bookings where bookings.status = 'confirm'";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               
+                b = new Booking();
+                b.setStatus(rs.getString(1));
+                lConfirm.add(b);
+                 cb = "the query is correct in try";
+            }
+            
+        }catch(Exception e){
+            e.getMessage();
+            cb = e.toString()+" from catch bdao ";
+        }
+        
+       return lConfirm;
+    }
+    
+    
+     public List<Booking> refusedBooking(){
+        
+        String cb = null;
+         List<Booking> lRefus = new ArrayList<>();
+        Booking b= null;
+         ResultSet rs = null;
+        
+        
+        try{
+            
+            Connection connection = getConnection();
+            String sql = "SELECT bookings.status FROM bookings where bookings.status = 'refus'";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               
+                b = new Booking();
+                b.setStatus(rs.getString(1));
+                lRefus.add(b);
+            }
+            
+        }catch(Exception e){
+            e.getMessage();
+            cb = e.toString()+" from catch bdao ";
+        }
+        
+       return lRefus;
     }
     
 }

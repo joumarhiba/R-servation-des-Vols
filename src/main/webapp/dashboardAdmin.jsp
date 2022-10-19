@@ -297,6 +297,7 @@
                 </form>
              </div>
              </div>        
+          <%@include file="infosAdmin.jsp" %>
                <%@include file="statistics.jsp" %>
                
                          <c:if test="${not empty succMsg }" >

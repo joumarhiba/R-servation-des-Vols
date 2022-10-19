@@ -8,6 +8,10 @@ com\marocair\model\RegisterBean.class
 com\marocair\servlet\RegisterServlet.class
 com\marocair\servlet\UpdateVolServlet.class
 com\marocair\dao\BookingDao.class
+com\marocair\model\SendMail.class
+com\marocair\servlet\ResServlet.class
+com\marocair\model\ReservationBean.class
+com\marocair\model\SendMail$1.class
 com\marocair\servlet\LoginServlet.class
 com\marocair\servlet\searchServlet.class
 com\marocair\dao\DbConnection.class

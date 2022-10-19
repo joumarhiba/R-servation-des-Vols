@@ -23,7 +23,143 @@
             
              <div class="d-flex justify-content-center m-8">
                  
-            <form action="">
+                 
+<div>vols</div>
+<div class="container d-flex justify-content-center m-8" >
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="border-b">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                ID
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Départ
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Arrivée
+              </th>
+              <th scope="col-2" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Date/Heure départ
+              </th>
+              <th scope="col-2" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Date/Heure arrivée
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                escale
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Prix
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                options
+              </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <%
+              VolDao dao1 = new VolDao();
+              List<Vol> list1 = dao1.getVols();
+              for(Vol v : list1) {
+            %>
+
+            <tr class="border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <%=v.getIdVol() %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getStart_city() %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getEnd_city() %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getStart_date_time() %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getEnd_date_time() %>
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getEscale() %>
+              </td>
+
+              <td class="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%=v.getPrix() %> MAD
+              </td>
+<%--              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">--%>
+<%--                <a href="edit_vol.jsp?idVol=<%=v.getIdVol() %>" class="text-gray-900 hover:text-gray-600"><i class="fas fa-edit"></i></a>--%>
+<%--                <a href="delete?idVol=<%=v.getIdVol() %>" class="text-gray-900 hover:text-gray-600"><i class="fa fa-trash"></i></a>--%>
+<%--              </td>--%>
+              <td><button type="button" class="bg-gray-800 text-white p-2" data-bs-toggle="modal" data-bs-target="#exampleModal<%=v.getIdVol()%>">
+                Reserver
+              </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal<%=v.getIdVol()%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Réservation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form name="form" action="ResServlet" method="post">
+                          <!-- nbre place input -->
+                          <div class="form-outline mb-4">
+                            <label class="form-label" for="form2Example1">Nombre de places:</label>
+                            <input type="number" id="form2Example1" class="form-control"  name="nb_places"/>
+                           </div>
+
+                          <!-- type input -->
+                          <div class="form-outline mb-4">
+                            <select class="form-select" aria-label="Default select example" name="typeBooking">
+                              <option selected>Saisir votre Choix</option>
+                              <option value="Aller">Aller</option>
+                              <option value="Aller-Retour">Aller-Retour</option>
+                            </select>
+                          </div>
+                          <!--  classe input -->
+                          <div class="form-outline mb-4">
+                            <select class="form-select" aria-label="Default select example" name="classe">
+                              <option selected>Saisir Classe :</option>
+                              <option value="economique">economique</option>
+                              <option value="Affaire">Affaire</option>
+                              <option value="Premier">Premier</option>
+                            </select>
+                          </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <input type="hidden" name="idVol" value="<%=v.getIdVol() %>" />
+                                               <input type="hidden" name="iduser" value="<%=v.getIduser() %>" />
+
+                        <input type="submit" value="reserve">
+                      </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+            <%
+              }
+            %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                 
+                 
+                 
+<!--            <form action="">
                   <div class="row">
                       <div class="col">
                         <input type="number" class="form-control" placeholder="nombre des passagers" name="nb_places">
@@ -50,7 +186,7 @@
                           <button type="button" class="btn btn-primary">submit</button>
                       </div>
                  </div>
-             </form>
+             </form>-->
              </div>
             
             

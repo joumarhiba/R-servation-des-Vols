@@ -100,6 +100,6 @@
 </div>
           </div>
           
-            <%@include file="infosAdmin.jsp" %>
+           
     </body>
 </html>

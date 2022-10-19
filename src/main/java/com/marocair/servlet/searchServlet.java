@@ -29,7 +29,7 @@ public class searchServlet extends HttpServlet {
         
         String query = request.getParameter("q");
                BookingDao bd = new BookingDao();
-              List<Booking> l = bd.confirmedBooking(query);
+              List<Booking> l = bd.getBookingByDate(query);
         HttpSession session = request.getSession();
         
         if(!l.isEmpty()){
